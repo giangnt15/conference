@@ -1,0 +1,6 @@
+@Contoso.Conference.API_HostAddress = http://localhost:5207
+
+GET {{Contoso.Conference.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
