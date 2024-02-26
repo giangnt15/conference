@@ -60,11 +60,52 @@ namespace Contoso.Conference.Domain
             });
         }
 
+        public void CommitReservation(Guid reservationId)
+        {
+            if (!_pendingReservations.ContainsKey(reservationId))
+            {
+                throw new InvalidOperationException("Reservation not existed!");
+            }
+            Apply(new SeatsAvailabilityEvents.SeatsReservationCommited()
+            {
+                ReservationId = reservationId
+            });
+        }
+
+        public void CancelReservation(Guid reservationId)
+        {
+            if (!_pendingReservations.ContainsKey(reservationId))
+            {
+                throw new InvalidOperationException("Reservation not existed!");
+            }
+            Apply(new SeatsAvailabilityEvents.SeatReservationCanceled()
+            {
+                ReservationId = reservationId,
+                AvailableSeatsChange = _pendingReservations[reservationId]
+            });
+        }
+
+        public void AddSeats(List<SeatQuantity> seats)
+        {
+            Apply(new SeatsAvailabilityEvents.SeatsAdded()
+            {
+                Seats = seats.Where(x => _remainingSeats.ContainsKey(x.SeatId)).ToList(),
+            });
+        }
+
+        public void RemoveSeats(List<SeatQuantity> seats)
+        {
+            Apply(new SeatsAvailabilityEvents.SeatsRemoved()
+            {
+                Seats = seats.Where(x => _remainingSeats.ContainsKey(x.SeatId)).ToList(),
+            });
+        }
+
         protected override void EnsureValidState()
         {
             if (_remainingSeats.Any(x => x.Value < 0))
             {
-                throw new Exception();
+                throw new Exception("Remaining seats can not be negative");
             }
         }
 
@@ -84,6 +125,28 @@ namespace Contoso.Conference.Domain
                     foreach (var item in e.Seats)
                     {
                         _remainingSeats[item.SeatId] -= item.Quantity;
+                    }
+                    break;
+                case SeatsAvailabilityEvents.SeatsReservationCommited e:
+                    _pendingReservations.Remove(e.ReservationId);
+                    break;
+                case SeatsAvailabilityEvents.SeatReservationCanceled e:
+                    _pendingReservations.Remove(e.ReservationId);
+                    foreach (var seat in e.AvailableSeatsChange)
+                    {
+                        _remainingSeats[seat.SeatId] += seat.Quantity;
+                    }
+                    break;
+                case SeatsAvailabilityEvents.SeatsAdded e:
+                    foreach (var seat in e.Seats)
+                    {
+                        _remainingSeats[seat.SeatId] += seat.Quantity;
+                    }
+                    break;
+                case SeatsAvailabilityEvents.SeatsRemoved e:
+                    foreach (var seat in e.Seats)
+                    {
+                        _remainingSeats[seat.SeatId] -= seat.Quantity;
                     }
                     break;
             }

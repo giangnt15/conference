@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contoso.Conference.Domain.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,18 @@ namespace Contoso.Conference.Domain.Events
 
         public class OrderExpired : VersionedEvent
         {
+        }
+
+        public class OrderPartiallyReserved : VersionedEvent
+        {
+            public DateTime ReservationExpiration { get; set; }
+            public List<SeatQuantity> Reserved { get; set; } 
+        }
+
+        public class OrderReservationCompleted : VersionedEvent
+        {
+            public DateTime ReservationExpiration { get; set; }
+            public List<SeatQuantity> Reserved { get; set; }
         }
     }
 }

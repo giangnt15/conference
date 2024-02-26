@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Conference.API", "Contoso.Conference.API\Contoso.Conference.API.csproj", "{188EFD81-4730-48AC-8E53-409BFA1CC211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Conference.API", "Contoso.Conference.API\Contoso.Conference.API.csproj", "{188EFD81-4730-48AC-8E53-409BFA1CC211}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{6255EEF9-C9E8-4359-9360-8C93469188CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderAndRegistration", "OrderAndRegistration", "{438F9BB5-72F0-4894-BF71-4B2CE1FC724B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Conference.Domain", "Contoso.Conference.Domain\Contoso.Conference.Domain.csproj", "{8963448C-C2DB-4A4F-8F73-8E905CF13A73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Conference.Domain", "Contoso.Conference.Domain\Contoso.Conference.Domain.csproj", "{8963448C-C2DB-4A4F-8F73-8E905CF13A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Conference.Registration.Application", "Contoso.Conference.Registration.Application\Contoso.Conference.Registration.Application.csproj", "{AE95E18F-096A-40BD-9A24-24C08FBE4907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Conference.Registration.Application.Contracts", "Contoso.Conference.Registration.Application.Contracts\Contoso.Conference.Registration.Application.Contracts.csproj", "{822012F3-0C17-42CA-A0CD-6D038F15E48B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,14 @@ Global
 		{8963448C-C2DB-4A4F-8F73-8E905CF13A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8963448C-C2DB-4A4F-8F73-8E905CF13A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8963448C-C2DB-4A4F-8F73-8E905CF13A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE95E18F-096A-40BD-9A24-24C08FBE4907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE95E18F-096A-40BD-9A24-24C08FBE4907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE95E18F-096A-40BD-9A24-24C08FBE4907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE95E18F-096A-40BD-9A24-24C08FBE4907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822012F3-0C17-42CA-A0CD-6D038F15E48B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822012F3-0C17-42CA-A0CD-6D038F15E48B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822012F3-0C17-42CA-A0CD-6D038F15E48B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822012F3-0C17-42CA-A0CD-6D038F15E48B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{188EFD81-4730-48AC-8E53-409BFA1CC211} = {6255EEF9-C9E8-4359-9360-8C93469188CD}
 		{8963448C-C2DB-4A4F-8F73-8E905CF13A73} = {438F9BB5-72F0-4894-BF71-4B2CE1FC724B}
+		{AE95E18F-096A-40BD-9A24-24C08FBE4907} = {438F9BB5-72F0-4894-BF71-4B2CE1FC724B}
+		{822012F3-0C17-42CA-A0CD-6D038F15E48B} = {438F9BB5-72F0-4894-BF71-4B2CE1FC724B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C372A3B-3D7E-4B1F-A583-C324554AB220}
