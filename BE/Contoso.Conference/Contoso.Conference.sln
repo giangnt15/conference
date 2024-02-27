@@ -11,9 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderAndRegistration", "Ord
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Conference.Domain", "Contoso.Conference.Domain\Contoso.Conference.Domain.csproj", "{8963448C-C2DB-4A4F-8F73-8E905CF13A73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Conference.Registration.Application", "Contoso.Conference.Registration.Application\Contoso.Conference.Registration.Application.csproj", "{AE95E18F-096A-40BD-9A24-24C08FBE4907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Conference.Registration.Application", "Contoso.Conference.Registration.Application\Contoso.Conference.Registration.Application.csproj", "{AE95E18F-096A-40BD-9A24-24C08FBE4907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Conference.Registration.Application.Contracts", "Contoso.Conference.Registration.Application.Contracts\Contoso.Conference.Registration.Application.Contracts.csproj", "{822012F3-0C17-42CA-A0CD-6D038F15E48B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Conference.Registration.Application.Contracts", "Contoso.Conference.Registration.Application.Contracts\Contoso.Conference.Registration.Application.Contracts.csproj", "{822012F3-0C17-42CA-A0CD-6D038F15E48B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DD35000E-84AC-4600-8F33-BAE8DA442CB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{46CA238E-5637-45AE-A774-C45396F705E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Conference.Framework", "Contoso.Conference.Framework\Contoso.Conference.Framework.csproj", "{951298F9-78E0-4499-9734-78656666895F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Conference.Infrastructure", "Contoso.Conference.Infrastructure\Contoso.Conference.Infrastructure.csproj", "{BD83DDA6-B6AA-4176-9BFE-18A318014119}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +45,14 @@ Global
 		{822012F3-0C17-42CA-A0CD-6D038F15E48B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{822012F3-0C17-42CA-A0CD-6D038F15E48B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{822012F3-0C17-42CA-A0CD-6D038F15E48B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951298F9-78E0-4499-9734-78656666895F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951298F9-78E0-4499-9734-78656666895F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951298F9-78E0-4499-9734-78656666895F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951298F9-78E0-4499-9734-78656666895F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD83DDA6-B6AA-4176-9BFE-18A318014119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD83DDA6-B6AA-4176-9BFE-18A318014119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD83DDA6-B6AA-4176-9BFE-18A318014119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD83DDA6-B6AA-4176-9BFE-18A318014119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +62,8 @@ Global
 		{8963448C-C2DB-4A4F-8F73-8E905CF13A73} = {438F9BB5-72F0-4894-BF71-4B2CE1FC724B}
 		{AE95E18F-096A-40BD-9A24-24C08FBE4907} = {438F9BB5-72F0-4894-BF71-4B2CE1FC724B}
 		{822012F3-0C17-42CA-A0CD-6D038F15E48B} = {438F9BB5-72F0-4894-BF71-4B2CE1FC724B}
+		{951298F9-78E0-4499-9734-78656666895F} = {46CA238E-5637-45AE-A774-C45396F705E5}
+		{BD83DDA6-B6AA-4176-9BFE-18A318014119} = {DD35000E-84AC-4600-8F33-BAE8DA442CB5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C372A3B-3D7E-4B1F-A583-C324554AB220}

@@ -18,6 +18,11 @@ namespace Contoso.Conference.Domain
         public EmailValueObject RegistrantEmail { get; internal set; }
         public DateTime ReservationExpiration { get; internal set; }
 
+        public Order()
+        {
+
+        }
+
         public Order(Guid id, Guid conferenceId, List<OrderItem> items, string registrantEmail)
         {
             Apply(new OrderPlaced()

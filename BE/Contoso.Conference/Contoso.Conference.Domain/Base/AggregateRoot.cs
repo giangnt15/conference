@@ -9,7 +9,8 @@ namespace Contoso.Conference.Domain.Base
 {
     public abstract class AggregateRoot<TId>
     {
-        public AggregateRoot() { 
+        public AggregateRoot()
+        {
             _events = [];
         }
 
@@ -34,5 +35,20 @@ namespace Contoso.Conference.Domain.Base
 
         public List<object> GetEvents() => _events;
         public void ClearEvents() => _events.Clear();
+
+        public void Load(IEnumerable<IVersionedEvent> events)
+        {
+            foreach (var @event in events)
+            {
+                When(@event);
+                Version = @event.Version;
+            }
+        }
+
+        public void Load(IVersionedEvent @event)
+        {
+            When(@event);
+            Version = @event.Version;
+        }
     }
 }
