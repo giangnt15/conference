@@ -7,48 +7,44 @@ using System.Threading.Tasks;
 
 namespace Contoso.Conference.Registration.Application.Contracts.Commands
 {
-    public static class OrderCommands
+    public static class SeatsAvailabilityCommands
     {
         public static class V1
         {
-            public class PlaceOrder : ICommand
+            public class AddSeat : ICommand
             {
                 public Guid Id { get; set; }
                 public Guid ConferenceId { get; set; }
                 public List<SeatQuantity> Seats { get; set; }
-                public string RegistrantEmail { get; set; }
             }
 
-            public class UpdateOrder : ICommand
+            public class RemoveSeat : ICommand
             {
                 public Guid Id { get; set; }
-                public Guid OrderId { get; set; }
+                public Guid ConferenceId { get; set; }
                 public List<SeatQuantity> Seats { get; set; }
             }
 
-            public class ExpireOrder : ICommand
+            public class CommitReservation : ICommand
             {
                 public Guid Id { get; set; }
-                public Guid OrderId { get; set; }
+                public Guid ConferenceId { get; set; }
+                public Guid ReservationId { get; set; }
             }
 
-            public class RejectOrder : ICommand
+            public class CancelReservation : ICommand
             {
                 public Guid Id { get; set; }
-                public Guid OrderId { get; set; }
+                public Guid ConferenceId { get; set; }
+                public Guid ReservationId { get; set; }
             }
 
-            public class MarkOrderAsReserved : ICommand
+            public class MakeReservation : ICommand
             {
                 public Guid Id { get; set; }
-                public Guid OrderId { get; set; }
+                public Guid ConferenceId { get; set; }
+                public Guid ReservationId { get; set; }
                 public List<SeatQuantity> Seats { get; set; }
-            }
-
-            public class ConfirmOrder : ICommand
-            {
-                public Guid Id { get; set; }
-                public Guid OrderId { get; set; }
             }
         }
     }

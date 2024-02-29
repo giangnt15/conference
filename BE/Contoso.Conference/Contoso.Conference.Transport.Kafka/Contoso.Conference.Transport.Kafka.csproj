@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Contoso.Conference.Framework\Contoso.Conference.Framework.csproj" />
-    <ProjectReference Include="..\Contoso.Conference.Registration.Application.Contracts\Contoso.Conference.Registration.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Contoso.Conference.Transport\Contoso.Conference.Transport.csproj" />
   </ItemGroup>
 
 </Project>

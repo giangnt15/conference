@@ -20,7 +20,7 @@ namespace Contoso.Conference.Domain
 
         public Order()
         {
-
+            
         }
 
         public Order(Guid id, Guid conferenceId, List<OrderItem> items, string registrantEmail)
